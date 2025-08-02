@@ -5,8 +5,10 @@ metadata:
   labels:
     app: vote
 spec:
+  replicas: 1
   selector:
-    
+    matchLabels:
+      app: vote
   template:
     metadata:
       name: vote
@@ -18,4 +20,5 @@ spec:
           image: kodekloud/examplevotingapp_vote:v1
           ports:
             - containerPort: 80
+
               name: vote
